@@ -35,11 +35,10 @@
             android:id="@+id/alter_ego_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/hero_image"
             android:layout_alignBottom="@+id/hero_image"
             android:layout_marginStart="16dp"
-            android:hint="Alter ego"
-            />
+            android:layout_toEndOf="@+id/hero_image"
+            android:hint="Alter ego" />
 
         <View
             android:id="@+id/divider"
@@ -97,6 +96,7 @@
             android:layout_marginTop="0dp" />
 
         <Button
+            android:id="@+id/save_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
