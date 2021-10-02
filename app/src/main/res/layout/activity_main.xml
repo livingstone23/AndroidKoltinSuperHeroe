@@ -88,12 +88,13 @@
             />
 
         <RatingBar
+            android:id="@+id/power_bar"
             android:layout_width="295dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/power_text"
             android:layout_centerHorizontal="true"
-            android:progressTint="@color/yellow"
-            android:layout_marginTop="0dp" />
+            android:layout_marginTop="0dp"
+            android:progressTint="@color/yellow" />
 
         <Button
             android:id="@+id/save_button"
