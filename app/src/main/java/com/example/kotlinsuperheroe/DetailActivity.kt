@@ -6,6 +6,7 @@ import com.example.kotlinsuperheroe.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
 
+    /*
     companion object {
         const val SUPERHERO_NAME_KEY = "superhero_name"
         const val ALTER_EGO_KEY = "alter_ego"
@@ -13,6 +14,12 @@ class DetailActivity : AppCompatActivity() {
         const val POWER_KEY = "power"
 
     }
+    */
+
+    companion object {
+        const val SUPERHERO_KEY = "superhero"
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,14 +30,26 @@ class DetailActivity : AppCompatActivity() {
 
         val bundle = intent.extras!!
 
+        /*
         val superheroeName = bundle.getString(SUPERHERO_NAME_KEY) ?: ""
         val alterEgo = bundle.getString(ALTER_EGO_KEY) ?: ""
         val bio = bundle.getString(BIO_KEY) ?: ""
         val power = bundle.getFloat(POWER_KEY)
+        */
 
+        val superhero = bundle.getParcelable<Superhero>(SUPERHERO_KEY)!!
+
+        /*
         binding.heroName.text = superheroeName
         binding.alterEgoText.text = alterEgo
         binding.bioText2.text = bio
         binding.ratingBar.rating = power
+        */
+
+        binding.heroName.text = superhero.name
+        binding.alterEgoText.text = superhero.alterEgo
+        binding.bioText2.text = superhero.bio
+        binding.ratingBar.rating = superhero.power
+
     }
 }

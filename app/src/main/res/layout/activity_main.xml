@@ -89,7 +89,7 @@
 
         <RatingBar
             android:id="@+id/power_bar"
-            android:layout_width="295dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/power_text"
             android:layout_centerHorizontal="true"
