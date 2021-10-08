@@ -46,10 +46,14 @@ class DetailActivity : AppCompatActivity() {
         binding.ratingBar.rating = power
         */
 
+        /*
         binding.heroName.text = superhero.name
         binding.alterEgoText.text = superhero.alterEgo
         binding.bioText2.text = superhero.bio
         binding.ratingBar.rating = superhero.power
+        */
+
+        binding.superheroe = superhero
 
     }
 }
