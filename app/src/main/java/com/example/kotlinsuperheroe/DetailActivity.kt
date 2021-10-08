@@ -1,5 +1,6 @@
 package com.example.kotlinsuperheroe
 
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.kotlinsuperheroe.databinding.ActivityDetailBinding
@@ -18,6 +19,7 @@ class DetailActivity : AppCompatActivity() {
 
     companion object {
         const val SUPERHERO_KEY = "superhero"
+        const val BITMAP_KEY = "bitmap"
     }
 
 
@@ -38,6 +40,7 @@ class DetailActivity : AppCompatActivity() {
         */
 
         val superhero = bundle.getParcelable<Superhero>(SUPERHERO_KEY)!!
+        val bitmap = bundle.getParcelable<Bitmap>(BITMAP_KEY)!!
 
         /*
         binding.heroName.text = superheroeName
@@ -53,6 +56,7 @@ class DetailActivity : AppCompatActivity() {
         binding.ratingBar.rating = superhero.power
         */
 
+        binding.imageView.setImageBitmap(bitmap)
         binding.superheroe = superhero
 
     }
