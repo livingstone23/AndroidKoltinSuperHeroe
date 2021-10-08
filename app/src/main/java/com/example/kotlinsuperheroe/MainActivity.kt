@@ -7,12 +7,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.ImageView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.graphics.drawable.toBitmap
 import com.example.kotlinsuperheroe.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var heroImage: ImageView
+    private var heroBitmap: Bitmap? = null
+
+    private val getcontent = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
+        bitmap ->
+        heroBitmap = bitmap
+        heroImage.setImageBitmap(heroBitmap!!)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,8 +59,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openCamera() {
-        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(cameraIntent, 1000)
+
+        //val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        //startActivityForResult(cameraIntent, 1000)
+
+        getcontent.launch(null)
     }
 
     /*
@@ -76,6 +87,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    /*
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -83,10 +95,10 @@ class MainActivity : AppCompatActivity() {
         {
             val extras = data?.extras
             val heroBitmap = extras?.getParcelable<Bitmap>("data")
-            heroImage.setImageBitmap(heroBitmap)
+            heroImage.setImageBitmap(heroBitmap!!)
         }
     }
-
+*/
 
 
 }
