@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotlinSuperHeroe</string>
+    <string name="save">Save</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.kotlinsuperheroe
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.kotlinsuperheroe.databinding.ActivityDetailBinding
@@ -40,7 +41,10 @@ class DetailActivity : AppCompatActivity() {
         */
 
         val superhero = bundle.getParcelable<Superhero>(SUPERHERO_KEY)!!
-        val bitmap = bundle.getParcelable<Bitmap>(BITMAP_KEY)!!
+        val bitmapDirectory = bundle.getString(BITMAP_KEY)!!
+
+        val bitmap = BitmapFactory.decodeFile(bitmapDirectory)
+        //val bitmap = bundle.getParcelable<Bitmap>(BITMAP_KEY)!!
 
         /*
         binding.heroName.text = superheroeName
